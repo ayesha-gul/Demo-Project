@@ -25,7 +25,8 @@ const [isFetching,setFetching] = useState(false);
 
          useEffect( () => {
            async function fetchGlobalData() {
-             setFetching(true);
+             
+            setFetching(true);
              const apiResponse= await fetch("https://disease.sh/v3/covid-19/all")
              console.log(apiResponse);
 
