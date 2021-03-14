@@ -4,6 +4,10 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import GlobalData from './GlobalData';
 
+import { CountryPicker } from './dropdown';
+import CountryStats from './countryStats';
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -31,7 +35,15 @@ const useStyles = makeStyles((theme) => ({
         <Grid item xs={8}>
           <Paper className={classes.paper}>
 
-              country Data
+
+       
+         <CountryPicker/>
+         <CountryStats/>
+ 
+
+
+
+              
           </Paper>
         </Grid>
       
@@ -39,3 +51,5 @@ const useStyles = makeStyles((theme) => ({
     </div>
   );
 }
+
+            

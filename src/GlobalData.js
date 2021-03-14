@@ -5,14 +5,16 @@ import Typography from '@material-ui/core/Typography';
 
 import  NumberFormat  from 'react-number-format';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: '100%',
-      height: theme.spacing(10),
+      width: '90%',
+      height: theme.spacing(12),
+      paddingTop: 32,
       
     },
   },
@@ -28,10 +30,10 @@ const [isFetching,setFetching] = useState(false);
              
             setFetching(true);
              const apiResponse= await fetch("https://disease.sh/v3/covid-19/all")
-             console.log(apiResponse);
+             // console.log(apiResponse);
 
              const dataFromApi= await apiResponse.json();
-             console.log(dataFromApi)
+            // console.log('Globaldata =', dataFromApi)
              setGlobalData(dataFromApi);
              setFetching(false)
            }
@@ -52,7 +54,7 @@ const [isFetching,setFetching] = useState(false);
                              {loading}
                           </Typography>
                
-                             <Typography variant="subtitle2" gutterBottom>
+                             <Typography variant="subtitle2" gutterBottom style={{ fontWeight:'bold'}}>
                              Global Data as of today
                                 </Typography>
                      
@@ -62,7 +64,7 @@ const [isFetching,setFetching] = useState(false);
                       {loading}
                           </Typography>
                
-                             <Typography variant="subtitle2" gutterBottom style={{color:'orange', fontWeight:'bold'}} >
+                             <Typography variant="subtitle2" gutterBottom style={{color:'orange', fontWeight:'bold' , textAlign:'center'}} >
                              Active
                                 </Typography>
                       </Paper>
@@ -99,26 +101,24 @@ const [isFetching,setFetching] = useState(false);
   
     <div className={classes.root}>
    <Paper elevation={3} >
-       <Typography variant="h4" gutterBottom>
-       <NumberFormat value={globalData && globalData.todayCases} displayType={'text'} thousandSeparator={true}  />
 
-           
       
+       <Typography variant="h4" gutterBottom style={{color:'#2F4F4F'}}>
+       <NumberFormat value={globalData && globalData.cases} displayType={'text'} thousandSeparator={true}  />
            </Typography>
 
-              <Typography variant="subtitle2" gutterBottom>
-              Global Data as of today
+              <Typography variant="subtitle2" gutterBottom style={{color:'#2F4F4F', fontWeight:'bold' ,fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}}>
+              Global Data As Of Today
                  </Typography>
-      
        </Paper>
        <Paper elevation={3} >
-       <Typography variant="h4" gutterBottom style={{color:'orange'}}>
+       <Typography variant="h4" gutterBottom style={{color:'#3f51b5', fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}}>
        <NumberFormat value={globalData && globalData.active} displayType={'text'} thousandSeparator={true}  />
        
        
            </Typography>
 
-              <Typography variant="subtitle2" gutterBottom style={{color:'orange', fontWeight:'bold'}} >
+              <Typography variant="subtitle2" gutterBottom style={{color:'#3f51b5', fontWeight:'bold',fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}} >
               Active
                  </Typography>
        </Paper>
