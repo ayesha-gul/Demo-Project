@@ -91,15 +91,19 @@ import {Bar} from 'react-chartjs-2';
     
       return (
         <div>
+                <div style={{height:"400px"}}>
+
             <h2>COVID-19 Bar Chart</h2>
             <Bar
           data={chartData}
           width={100}
           height={190}
           options={{
+            responsive:true,
             maintainAspectRatio: false,
           }}
         />
+                           </div>
         </div>
     )
 }
