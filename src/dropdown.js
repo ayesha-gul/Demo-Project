@@ -73,8 +73,8 @@ const useStyles = makeStyles((theme) => ({
          <Select  style={{color:'#3f51b5'}}  onChange={ChangeEvent }>
                     {coData && coData.map(({country},index) => <MenuItem key = {index} value={country}> {country}   </MenuItem>)}
                      
-          </Select> <br></br><br></br> <CountryStats a={index}/>
-          <br></br><br></br>
+          </Select> <CountryStats a={index}/>
+          
           <Charts a={index}/> </div>
           );
 

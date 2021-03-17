@@ -76,13 +76,13 @@ import {Bar} from 'react-chartjs-2';
  const chartData = { labels: ['Total Cases', 'Deaths', 'Recovered','Active Cases'],
   datasets: [
     {
-      label: 'COVID-19 Stats',
-      backgroundColor: ['#737270','red','green'],
-      borderColor: 'black',
-      borderWidth: 1,
-      barThickness: 96,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
+      label: 'CoViD-19 Bar',
+            backgroundColor: '#3f51b5',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 1,
+            hoverBackgroundColor: '	#2554C7',
+            hoverBorderColor: 'rgba(255,99,132,1)',
+            barThickness:'90',
       data: Dataa.length > 0 ? [Dataa[a].cases,Dataa[a].deaths,Dataa[a].recovered,Dataa[a].active] : [] 
         }
   ]
@@ -93,11 +93,11 @@ import {Bar} from 'react-chartjs-2';
         <div>
                 <div style={{height:"400px"}}>
 
-            <h2>COVID-19 Bar Chart</h2>
+             <h6>COVID-19 Bar Chart</h6> 
             <Bar
           data={chartData}
-          width={100}
-          height={190}
+          width={80}
+          height={100}
           options={{
             responsive:true,
             maintainAspectRatio: false,

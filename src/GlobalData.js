@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '97%',
       minWidth:300,
-      height: theme.spacing(11),
+      height: theme.spacing(13),
+      paddingTop:'20px'
  
       
     },
@@ -24,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 const useStylesT = makeStyles({
    root: {
-       width: '40%',
-       maxWidth: 100,
+       width: '100%',
+       maxWidth: 500,
        color:"#737270",
    },
 });
