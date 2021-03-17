@@ -4,6 +4,8 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import CountryStats from './countryStats';
+import ChartBAr, {  Chart } from './chart';
+import {Charts} from './Charts';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -50,15 +52,30 @@ const useStyles = makeStyles((theme) => ({
             getIndex = coData.findIndex( ({country}) =>country === cc);
             setIndex(getIndex);
            }
+           const LOading ='Loading'
+           if(coFetching) {
+             return(
+              <div> 
+              
+              
+              
+              <Select  style={{color:'#3f51b5'}}  >
+                    <option>   {LOading} </option>
+                         
+               </Select></div>
+             )
+           }
           return(
             <div> 
               
               
               
          <Select  style={{color:'#3f51b5'}}  onChange={ChangeEvent }>
-                    {coData && coData.map(({country},index) => <option  key = {index} value={country}> {country}   </option>)}
-                     <CountryStats a={index}/>
-          </Select></div>
+                    {coData && coData.map(({country},index) => <MenuItem key = {index} value={country}> {country}   </MenuItem>)}
+                     
+          </Select> <br></br><br></br> <CountryStats a={index}/>
+          <br></br><br></br>
+          <Charts a={index}/> </div>
           );
 
         }    

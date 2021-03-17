@@ -12,16 +12,28 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: '90%',
-      height: theme.spacing(12),
-      paddingTop: 32,
+      width: '97%',
+      minWidth:300,
+      height: theme.spacing(11),
+ 
       
     },
   },
 }));
 
+
+const useStylesT = makeStyles({
+   root: {
+       width: '40%',
+       maxWidth: 100,
+       color:"#737270",
+   },
+});
+
+
 export default function GlobalData() {
   const classes = useStyles();
+  const classesT = useStylesT();
 const [globalData,setGlobalData] = useState();
 const [isFetching,setFetching] = useState(false);
 
@@ -49,42 +61,46 @@ const [isFetching,setFetching] = useState(false);
                 return(
                   <div className={classes.root}>
                   <Paper elevation={3} >
+                  <div className={classesT.root}>
                       <Typography variant="h4" gutterBottom>
                      
                              {loading}
-                          </Typography>
+                          </Typography> 
                
                              <Typography variant="subtitle2" gutterBottom style={{ fontWeight:'bold'}}>
                              Global Data as of today
-                                </Typography>
+                                </Typography> </div>
                      
                       </Paper>
                       <Paper elevation={3} >
+                      <div className={classesT.root}>
                       <Typography variant="h4" gutterBottom style={{color:'orange'}}>
                       {loading}
                           </Typography>
                
                              <Typography variant="subtitle2" gutterBottom style={{color:'orange', fontWeight:'bold' , textAlign:'center'}} >
                              Active
-                                </Typography>
+                                </Typography> </div>
                       </Paper>
                       <Paper elevation={3} >
+                      <div className={classesT.root}>
                       <Typography variant="h4" gutterBottom style={{color:"green"}}>
                      {loading}
                           </Typography>
                
                              <Typography variant="subtitle2" gutterBottom style={{color:'green', fontWeight:'bold'}} >
                              Recovered
-                                </Typography>
+                                </Typography> </div>
                       </Paper>
                       <Paper elevation={3} >
+                      <div className={classesT.root}>
                       <Typography variant="h4" gutterBottom style={{color:'red'}}>
                      {loading}
                           </Typography>
                
                              <Typography variant="subtitle2" gutterBottom  style={{color:'red', fontWeight:'bold'}}>
                              Fatailities
-                                </Typography>
+                                </Typography> </div>
                       </Paper>
                    
                    </div>
@@ -102,16 +118,17 @@ const [isFetching,setFetching] = useState(false);
     <div className={classes.root}>
    <Paper elevation={3} >
 
-      
+   <div className={classesT.root}>
        <Typography variant="h4" gutterBottom style={{color:'#2F4F4F'}}>
        <NumberFormat value={globalData && globalData.cases} displayType={'text'} thousandSeparator={true}  />
            </Typography>
 
               <Typography variant="subtitle2" gutterBottom style={{color:'#2F4F4F', fontWeight:'bold' ,fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}}>
               Global Data As Of Today
-                 </Typography>
+                 </Typography> </div>
        </Paper>
        <Paper elevation={3} >
+       <div className={classesT.root}>
        <Typography variant="h4" gutterBottom style={{color:'#3f51b5', fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}}>
        <NumberFormat value={globalData && globalData.active} displayType={'text'} thousandSeparator={true}  />
        
@@ -120,9 +137,10 @@ const [isFetching,setFetching] = useState(false);
 
               <Typography variant="subtitle2" gutterBottom style={{color:'#3f51b5', fontWeight:'bold',fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif'}} >
               Active
-                 </Typography>
+                 </Typography> </div>
        </Paper>
        <Paper elevation={3} >
+       <div className={classesT.root}>
        <Typography variant="h4" gutterBottom style={{color:"green"}}>
        <NumberFormat value= {globalData && globalData.recovered}displayType={'text'} thousandSeparator={true}  />
        
@@ -132,9 +150,10 @@ const [isFetching,setFetching] = useState(false);
 
               <Typography variant="subtitle2" gutterBottom style={{color:'green', fontWeight:'bold'}} >
               Recovered
-                 </Typography>
+                 </Typography> </div>
        </Paper>
        <Paper elevation={3} >
+       <div className={classesT.root}>
        <Typography variant="h4" gutterBottom style={{color:'red'}}>
        <NumberFormat value={globalData && globalData.deaths} displayType={'text'} thousandSeparator={true}  />
        
@@ -143,7 +162,7 @@ const [isFetching,setFetching] = useState(false);
 
               <Typography variant="subtitle2" gutterBottom  style={{color:'red', fontWeight:'bold'}}>
               Fatailities
-                 </Typography>
+                 </Typography> </div>
        </Paper>
     
     </div>

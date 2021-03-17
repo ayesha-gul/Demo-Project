@@ -65,7 +65,7 @@ export default function CountryStats(props) {
 
   
   return (
-    <div className={classes.root} style={{marginTop:'17px' , marginRight:'30px'}}>
+    <div className={classes.root} >
    <Grid container spacing={3}>
         
          <Grid item xs={6} sm={3}>
@@ -77,19 +77,19 @@ export default function CountryStats(props) {
          <Grid item xs={6} sm={3}>
              
                  <Paper className={classes.paper}  style={{color:'	#000080'}}>  <Typography variant="h6" gutterBottom>
-                 <CountUp start={0} end={state && state[0].recovered} separator="," duration={0.2}/>    </Typography>
+                      <CountUp start={0} end={state && state[props.a].recovered} separator="," duration={0.2}/>    </Typography>
                    <Typography  style={{fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif',color:'#3f51b5', fontWeight:'bold'}}> Recovered </Typography> </Paper> 
                     </Grid>
         <Grid item xs={6} sm={3}>
              
                 <Paper className={classes.paper}  style={{color:'	#000080'}}>  <Typography variant="h6" gutterBottom>
-                 <CountUp start={0} end={state && state[0].todayCases} separator="," duration={0.2}/>   </Typography>
+                     <CountUp start={0} end={state && state[props.a].todayCases} separator="," duration={0.2}/>   </Typography>
                   <Typography  style={{fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif',color:'#3f51b5', fontWeight:'bold'}}> Today-Cases   </Typography> </Paper>
                     </Grid>
         <Grid item xs={6} sm={3}>
             
                 <Paper className={classes.paper}  style={{color:'	#000080'}}>  <Typography variant="h6" gutterBottom>
-                 <CountUp start={0} end={state && state[0].deaths} separator="," duration={0.2}/>    </Typography>
+                 <CountUp start={0} end={state && state[props.a].deaths} separator="," duration={0.2}/>    </Typography>
                   <Typography style={{fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif',color:'#3f51b5', fontWeight:'bold'}}> Deaths  </Typography> </Paper>
                    </Grid>
       </Grid>

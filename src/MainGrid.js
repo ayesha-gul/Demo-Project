@@ -25,24 +25,19 @@ const useStyles = makeStyles((theme) => ({
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <Paper className={classes.paper}>
 
             <GlobalData />
 
           </Paper>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={9}>
           <Paper className={classes.paper}>
 
 
        
          <CountryPicker/>
-         <CountryStats/>
- 
-
-
-
               
           </Paper>
         </Grid>
